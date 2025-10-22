@@ -29,7 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     });
 });
 
-// ===== Simple tab logic (fixed your typos) =====
+// ===== Simple tab logic =====
 const tabLinks = document.getElementsByClassName('tab-links');
 const tabContents = document.getElementsByClassName('tab-contents');
 
@@ -49,7 +49,7 @@ window.hideSidebar = hideSidebar;
 // === Personalized Greeting ===
 const greetingText = document.getElementById('greetingText');
 const nameInput = document.getElementById('nameInput');
-const nameFrom = document.getElementById('nameForm');
+const nameForm = document.getElementById('nameForm');
 const clearName = document.getElementById('clearName');
 
 // Function to show the greeting based on the time of the day
