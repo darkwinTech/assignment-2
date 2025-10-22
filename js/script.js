@@ -46,3 +46,43 @@ window.openTab = openTab;
 window.showSidebar = showSidebar;
 window.hideSidebar = hideSidebar;
 
+// === Personalized Greeting ===
+const greetingText = document.getElementById('greetingText');
+const nameInput = document.getElementById('nameInput');
+const nameFrom = document.getElementById('nameForm');
+const clearName = document.getElementById('clearName');
+
+// Function to show the greeting based on the time of the day
+function updateGreeting() {
+    const hour = new Date().getHours();
+    const partOfDay = hour < 12 ? "Good Morning": hour < 18 ?"Good Afternoon": "Good Evening";
+    const savedName = localStorage.getItem("visitorName") || "";
+    greetingText.textContent = savedName
+        ? `${partOfDay}, ${savedName}!`
+        : `${partOfDay}!`;
+    greetingText.classList.remove("fade-in");
+    void greetingText.offsetWidth; // forces reflow (restarts animation)
+    greetingText.classList.add("fade-in");
+}
+
+// When user saves their name
+nameForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    if (name) {
+        localStorage.setItem("visitorName", name);
+        updateGreeting();
+    }
+});
+
+// When user clears their name
+clearName.addEventListener("click", () => {
+    localStorage.removeItem("visitorName");
+    nameInput.value = "";
+    updateGreeting();
+});
+
+// Run greeting on page load
+updateGreeting();
+
+
