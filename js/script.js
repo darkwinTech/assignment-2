@@ -96,3 +96,5 @@ document.getElementById("sortBtn").addEventListener("click", function () {
     // Re-append in new order
     projects.forEach((project) => grid.appendChild(project));
 });
+
+
