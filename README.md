@@ -21,7 +21,7 @@ messages when API requests failed with an option to retry, and included loading 
 * Error Handling and Feedback: Inline error messages for invalid inputs, user-friendly notifications for API errors, and clear loading indicators.
 
 ## How to run ?
-1. Copy this link (https://github.com/darkwinTech/assignment-2.git) and clone it into your IDE (WebStorm ot VSCode)
+1. Copy this link (https://github.com/darkwinTech/assignment-2.git) and clone it into your IDE (WebStorm or VSCode)
 2. Click Trust Project
 3. Go to index.html file and run it
 4. It will direct you to the browser (e.g. Chrome)
