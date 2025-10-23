@@ -139,3 +139,32 @@ contactForm.addEventListener("submit", (e) => {
         statusMsg.style.color = "#ff6b6b";
     }
 });
+
+// THE CAT API - RANDOM PHOTO
+const photoBtn = document.getElementById("fetchPhoto");
+const photoContent = document.getElementById("photoContent");
+
+photoBtn.addEventListener("click", async () => {
+    photoContent.innerHTML = `
+    <div class="loader"></div>
+    <p>Loading a cute cat... 😺</p>
+  `;
+
+    try {
+        // Fetch a random cat image
+        const response = await fetch("https://api.thecatapi.com/v1/images/search");
+        if (!response.ok) throw new Error("Failed to fetch image.");
+
+        const data = await response.json();
+        const imageUrl = data[0].url; // Extract the image URL
+
+        photoContent.innerHTML = `
+      <img src="${imageUrl}" alt="Random Cat" class="random-img" />
+      <p>Here’s a random cat for you </p>
+    `;
+    } catch (error) {
+        photoContent.innerHTML = `<p> Could not load cat photo. Please try again later.</p>`;
+        console.error("Cat API Error:", error);
+    }
+});
+

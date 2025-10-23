@@ -257,3 +257,15 @@ label { display: grid; gap: 8px; font-size: 14px; color: #e8e8e8; }
     }
 }
 
+.random-img {
+    width: 100%;
+    max-width: 500px;      /* limits how wide the image can grow */
+    height: 350px;         /* sets a consistent height */
+    object-fit: cover;     /* ensures the image fills the box nicely */
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
