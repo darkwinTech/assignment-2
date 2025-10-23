@@ -147,7 +147,7 @@ const photoContent = document.getElementById("photoContent");
 photoBtn.addEventListener("click", async () => {
     photoContent.innerHTML = `
     <div class="loader"></div>
-    <p>Loading a cute cat... 😺</p>
+    <p>Loading a cute cat...</p>
   `;
 
     try {
@@ -163,7 +163,7 @@ photoBtn.addEventListener("click", async () => {
       <p>Here’s a random cat for you </p>
     `;
     } catch (error) {
-        photoContent.innerHTML = `<p> Could not load cat photo. Please try again later.</p>`;
+        photoContent.innerHTML = `<p> Could not load photo. Please try again later.</p>`;
         console.error("Cat API Error:", error);
     }
 });
