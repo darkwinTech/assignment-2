@@ -84,5 +84,3 @@ clearName.addEventListener("click", () => {
 
 // Run greeting on page load
 updateGreeting();
-
-
