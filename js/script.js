@@ -97,4 +97,45 @@ document.getElementById("sortBtn").addEventListener("click", function () {
     projects.forEach((project) => grid.appendChild(project));
 });
 
+// Contact Form Handling
+const contactForm = document.getElementById("contactForm");
+const statusMsg = contactForm.querySelector(".form-status");
 
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    statusMsg.textContent = "";
+
+    const formData = new FormData(contactForm);
+    const name = formData.get("name").trim();
+    const email = formData.get("email").trim();
+    const message = formData.get("message").trim();
+
+    // Simple validation
+    if (!name || !email || !message) {
+        statusMsg.textContent = "Please fill out all fields.";
+        statusMsg.style.color = "#ff6b6b";
+        return;
+    }
+
+    // Email format check
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        statusMsg.textContent = "Please enter a valid email address.";
+        statusMsg.style.color = "#ff6b6b";
+        return;
+    }
+
+    // Simulate data handling (store locally)
+    try {
+        const submissions = JSON.parse(localStorage.getItem("contactSubmissions") || "[]");
+        submissions.push({ name, email, message, time: new Date().toISOString() });
+        localStorage.setItem("contactSubmissions", JSON.stringify(submissions));
+
+        statusMsg.textContent = "Thank you! Your message has been sent.";
+        statusMsg.style.color = "#6bff91";
+        contactForm.reset();
+    } catch (error) {
+        statusMsg.textContent = "Something went wrong. Please try again later.";
+        statusMsg.style.color = "#ff6b6b";
+    }
+});
