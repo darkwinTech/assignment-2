@@ -84,3 +84,15 @@ clearName.addEventListener("click", () => {
 
 // Run greeting on page load
 updateGreeting();
+
+// Sort By Date
+document.getElementById("sortBtn").addEventListener("click", function () {
+    const grid = document.getElementById("projectsGrid");
+    const projects = Array.from(grid.children);
+
+    // Sort by descending date (newest first)
+    projects.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date));
+
+    // Re-append in new order
+    projects.forEach((project) => grid.appendChild(project));
+});
