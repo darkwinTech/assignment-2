@@ -23,7 +23,7 @@ For this assignment, I enhanced my **personal portfolio website** by integrating
   → Implemented a single interactive button to dynamically sort projects by date.
 
 **Learning Outcome:**  
-  Gained hands-on experience with **event-driven programming** and **interactive UI design**.
+- Gained hands-on experience with **event-driven programming** and **interactive UI design**.
 ---
 ### 2. Data Handling
 - **Initial Attempt:** Tried using the **NASA API** to display random images.
