@@ -44,7 +44,7 @@ For this assignment, I enhanced my **personal portfolio website** by integrating
       → Implemented both for smoother and more engaging user experience.
 
 **Learning Outcome:**  
-Improved understanding of **CSS transitions** and **UI/UX enhancement through motion design**.
+- Improved understanding of **CSS transitions** and **UI/UX enhancement through motion design**.
 ---
 ##  Benefits of Using AI
 Using ChatGPT throughout this project helped to:
