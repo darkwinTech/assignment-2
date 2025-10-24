@@ -31,6 +31,10 @@ messages when API requests failed with an option to retry, and included loading 
 
 ## 🤖 AI Use (Short Summary)
 AI (ChatGPT) was used to:
+- Provide coding suggestions to enhance dynamic content and interactivity
+- Recommend UI improvements such as button sorting and animations
+- Assist with API troubleshooting and guide the switch to a more reliable data source
+- Improve user experience of the portfolio website
 
 ## 📂 Project Structure
 ```
